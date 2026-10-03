@@ -162,78 +162,95 @@
         </div>
     </header>
 
-    <!-- HERO BANNER SECTION -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-brand-cardBg to-brand-darkBg border-b border-brand-borderBg py-12 md:py-20">
-        <!-- Abstract Background Glows -->
-        <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-brand-accent/15 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-fire text-sm"></i> Нова Колекція 2026
-                    </div>
-                    <h1 class="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-none">
-                        Переводь Свій <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Спорт На Новий</span> Рівень
-                    </h1>
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
-                        Офіційний екіпірувальний центр. Преміальне взуття, професійний одяг та сучасне спорядження від світових брендів із гарантією якості.
-                    </p>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#catalog" class="px-8 py-4 bg-brand-accent text-black font-black uppercase text-sm rounded-xl hover:bg-brand-accentHover transition-all transform hover:-translate-y-0.5 accent-glow">
-                            Перейти до каталогу <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </a>
-                        <button onclick="filterByCategory('SALE')" class="px-8 py-4 bg-brand-cardBg border border-brand-borderBg text-white font-bold uppercase text-sm rounded-xl hover:bg-brand-borderBg transition-all">
-                            🔥 Знижки до -40%
-                        </button>
-                    </div>
-                    <!-- Brand Highlights -->
-                    <div class="pt-6 border-t border-brand-borderBg/50 flex items-center justify-center lg:justify-start gap-8 text-gray-400 text-xs font-semibold uppercase tracking-wider">
-                        <span><i class="fa-solid fa-shield-halved text-brand-accent mr-1"></i> 100% Оригінал</span>
-                        <span><i class="fa-solid fa-truck-fast text-brand-accent mr-1"></i> Доставка 1-2 дні</span>
-                        <span><i class="fa-solid fa-rotate-left text-brand-accent mr-1"></i> Обмін 30 днів</span>
-                    </div>
-                </div>
-
-                <!-- Hero Image Showcase -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-3xl overflow-hidden border border-brand-borderBg bg-gradient-to-br from-gray-900 to-black p-4 group">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Nike Sport Shoes" class="w-full h-80 sm:h-96 object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-8 right-8 bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl border border-brand-accent/40 text-right">
-                            <span class="block text-[10px] text-gray-400 uppercase font-bold">Хіт Продажів</span>
-                            <span class="text-sm font-black text-brand-accent">Nike Air Zoom Vapor</span>
+    <main class="flex-grow bg-brand-darkBg py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <aside class="lg:col-span-3">
+                <form id="sportQuestionnaire" onsubmit="submitQuestionnaire(event)" class="bg-brand-cardBg border border-brand-borderBg rounded-3xl p-5 sm:p-6 lg:sticky lg:top-28">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <div>
+                            <h2 class="text-lg font-black uppercase text-white">Підбір товарів</h2>
+                            <p class="text-[11px] text-gray-400">Знайдемо спорядження саме для вас</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <label for="sportPreference" class="block text-xs font-bold uppercase text-gray-300 mb-2">Ваш вид спорту</label>
+                    <select id="sportPreference" required class="w-full bg-brand-darkBg border border-brand-borderBg rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent mb-5">
+                        <option value="">Оберіть вид спорту</option>
+                        <option>Біг</option><option>Футбол</option><option>Фітнес</option><option>Туризм</option>
+                        <option>Велоспорт</option><option>Теніс</option><option>Плавання</option><option>Одяг</option><option>Харчування</option>
+                    </select>
+                    <label for="productTypePreference" class="block text-xs font-bold uppercase text-gray-300 mb-2">Що саме шукаєте?</label>
+                    <select id="productTypePreference" class="w-full bg-brand-darkBg border border-brand-borderBg rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent mb-5">
+                        <option value="">Будь-який тип товару</option>
+                    </select>
+                    <label for="modelPreference" class="block text-xs font-bold uppercase text-gray-300 mb-2">Модель або назва</label>
+                    <input id="modelPreference" type="search" placeholder="Наприклад, Predator або форма" class="w-full bg-brand-darkBg border border-brand-borderBg rounded-xl p-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent mb-5">
+                    <label for="colorPreference" class="block text-xs font-bold uppercase text-gray-300 mb-2">Бажаний колір</label>
+                    <select id="colorPreference" class="w-full bg-brand-darkBg border border-brand-borderBg rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent mb-5">
+                        <option value="">Будь-який колір</option>
+                        <option value="Чорний">Чорний</option><option value="Білий">Білий</option>
+                        <option value="Синій">Синій</option><option value="Червоний">Червоний</option>
+                        <option value="Зелений">Зелений</option><option value="Жовтий">Жовтий</option>
+                        <option value="Помаранчевий">Помаранчевий</option><option value="Сірий">Сірий</option>
+                        <option value="Інший">Інший</option>
+                    </select>
+                    <fieldset class="mb-5">
+                        <legend class="block text-xs font-bold uppercase text-gray-300 mb-2">Улюблені бренди</legend>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Nike" class="accent-brand-accent"> Nike</label>
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Adidas" class="accent-brand-accent"> Adidas</label>
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Puma" class="accent-brand-accent"> Puma</label>
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Asics" class="accent-brand-accent"> Asics</label>
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Under Armour" class="accent-brand-accent"> Under Armour</label>
+                            <label class="flex items-center gap-2"><input type="checkbox" name="preferredBrand" value="Інший" class="accent-brand-accent"> Інший</label>
+                        </div>
+                    </fieldset>
+                    <label for="budgetPreference" class="block text-xs font-bold uppercase text-gray-300 mb-2">Бюджет на товар</label>
+                    <select id="budgetPreference" class="w-full bg-brand-darkBg border border-brand-borderBg rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent mb-5">
+                        <option value="5000">До 5 000 грн</option><option value="10000">До 10 000 грн</option>
+                        <option value="25000">До 25 000 грн</option><option value="50000">Без обмежень</option>
+                    </select>
+                    <button type="submit" class="w-full py-3 bg-brand-accent text-black font-black uppercase text-xs rounded-xl hover:bg-brand-accentHover transition-all accent-glow">
+                        Підібрати товари <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                    <button id="editQuestionnaireBtn" type="button" onclick="editQuestionnaire()" class="hidden w-full mt-3 py-2 text-xs font-bold text-gray-400 hover:text-white">Змінити відповіді</button>
+                </form>
+            </aside>
 
-    <!-- CATEGORY SHOWCASE BAR -->
-    <section class="py-10 bg-brand-darkBg border-b border-brand-borderBg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-6 text-center sm:text-left">
-                Популярні Категорії
-            </h2>
-            <div id="categoryGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                <!-- Dynamically Populated or Static -->
-            </div>
-        </div>
-    </section>
+            <div class="lg:col-span-9 min-w-0">
+                <section id="shopIntro" class="relative overflow-hidden bg-gradient-to-br from-brand-cardBg to-brand-darkBg border border-brand-borderBg rounded-3xl p-6 sm:p-10 mb-8">
+                    <div class="absolute -top-20 -right-16 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="relative z-10 grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+                        <div class="md:col-span-3">
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-brand-accent text-xs font-bold uppercase"><i class="fa-solid fa-fire"></i> ATHLETIC X</span>
+                            <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight mt-4">Твій спорт.<br><span class="text-brand-accent">Твій рівень.</span></h1>
+                            <p class="text-gray-300 text-sm sm:text-base mt-4 leading-relaxed">Спортивний магазин для тренувань, змагань і активного відпочинку. Обирайте оригінальне взуття, одяг та спорядження від перевірених брендів.</p>
+                            <div class="flex flex-wrap gap-4 mt-5 text-xs font-semibold text-gray-400">
+                                <span><i class="fa-solid fa-shield-halved text-brand-accent mr-1"></i> Оригінальні товари</span>
+                                <span><i class="fa-solid fa-truck-fast text-brand-accent mr-1"></i> Доставка по Україні</span>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Спортивні кросівки" class="w-full h-52 sm:h-64 object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </section>
+                <section id="categoryShowcase" class="mb-8">
+                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-4">Популярні категорії</h2>
+                    <div id="categoryGrid" class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3"></div>
+                </section>
 
     <!-- MAIN PRODUCT CATALOG SECTION -->
-    <section id="catalog" class="py-12 bg-brand-darkBg flex-grow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="catalog" class="py-4">
+        <div>
             
             <!-- Section Header & Controls -->
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white flex items-center gap-3">
-                        Каталог Товарів <span id="productCountBadge" class="text-sm font-bold bg-brand-borderBg text-brand-accent px-3 py-1 rounded-full">0</span>
+                        <span id="catalogTitle">Найпопулярніші товари</span> <span id="productCountBadge" class="text-sm font-bold bg-brand-borderBg text-brand-accent px-3 py-1 rounded-full">0</span>
                     </h2>
-                    <p class="text-xs text-gray-400 mt-1">Знайдіть найкраще спорядження для своїх тренувань</p>
+                    <p id="catalogSubtitle" class="text-xs text-gray-400 mt-1">Перегляньте товари, які найчастіше обирають наші покупці</p>
                 </div>
 
                 <!-- Sort & Filter Toggle Bar -->
@@ -278,6 +295,10 @@
 
         </div>
     </section>
+
+            </div>
+        </div>
+    </main>
 
     <!-- FEATURES / WHY CHOOSE US -->
     <section class="py-12 bg-brand-cardBg border-y border-brand-borderBg">
@@ -621,12 +642,12 @@
                 <div>
                     <div class="flex justify-between text-xs font-bold text-gray-300 mb-2">
                         <span>Максимальна ціна:</span>
-                        <span id="priceRangeValue" class="text-brand-accent font-black text-sm">10 000 грн</span>
+                        <span id="priceRangeValue" class="text-brand-accent font-black text-sm">50 000 грн</span>
                     </div>
-                    <input type="range" id="priceRange" min="500" max="12000" step="100" value="12000" oninput="updatePriceFilter(this.value)" class="w-full accent-brand-accent cursor-pointer">
+                    <input type="range" id="priceRange" min="500" max="50000" step="500" value="50000" oninput="updatePriceFilter(this.value)" class="w-full accent-brand-accent cursor-pointer">
                     <div class="flex justify-between text-[10px] text-gray-500 mt-1">
                         <span>500 грн</span>
-                        <span>12 000 грн</span>
+                        <span>50 000 грн</span>
                     </div>
                 </div>
 
@@ -645,181 +666,8 @@
     <!-- TOAST NOTIFICATION CONTAINER -->
     <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
+    <script src="products.js"></script>
     <script>
-        /* ==========================================================================
-           PRODUCT DATABASE
-           ========================================================================== */
-        const PRODUCTS = [
-            {
-                id: 1,
-                title: "Nike ZoomX Vaporfly NEXT% 3",
-                category: "Біг",
-                price: 8999,
-                oldPrice: 10499,
-                rating: 4.9,
-                reviewsCount: 42,
-                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
-                sizes: ["40", "41", "42", "43", "44"],
-                colors: ["Червоний", "Білий"],
-                badge: "ХІТ",
-                description: "Професійні марафонські кросівки з карбоновою пластиною для максимального енергоповернення."
-            },
-            {
-                id: 2,
-                title: "Adidas Predator Elite FG",
-                category: "Футбол",
-                price: 6499,
-                oldPrice: 7200,
-                rating: 4.8,
-                reviewsCount: 29,
-                image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80",
-                sizes: ["39", "41", "42", "43", "45"],
-                colors: ["Чорний", "Неон"],
-                badge: "NEW",
-                description: "Футбольні бутси для натурального газону з технологією точного контролю м'яча Strikeskin."
-            },
-            {
-                id: 3,
-                title: "Набір Гантелей Bowflex SelectTech (2-24 кг)",
-                category: "Фітнес",
-                price: 11500,
-                oldPrice: 12900,
-                rating: 5.0,
-                reviewsCount: 18,
-                image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80",
-                sizes: ["Стандарт"],
-                colors: ["Чорний"],
-                badge: "ТОП",
-                description: "Регульовані розумні гантелі, що замінюють 15 пар звичайних гантелей у домашньому залі."
-            },
-            {
-                id: 4,
-                title: "Намет Трекінговий Osprey Elixir 2",
-                category: "Туризм",
-                price: 7800,
-                oldPrice: 0,
-                rating: 4.7,
-                reviewsCount: 15,
-                image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80",
-                sizes: ["2-місний"],
-                colors: ["Зелений"],
-                badge: "",
-                description: "Ультралегкий двохмісний 3-сезонний намет із підвищеним захистом від вітру та зливи."
-            },
-            {
-                id: 5,
-                title: "Велосипед Грейвел Cannondale Topstone 3",
-                category: "Велоспорт",
-                price: 34999,
-                oldPrice: 38500,
-                rating: 4.9,
-                reviewsCount: 8,
-                image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
-                sizes: ["M", "L", "XL"],
-                colors: ["Графіт"],
-                badge: "SALE",
-                description: "Легкий гравійний велосипед з алюмінієвою рамою та карбоновою виделкою для будь-яких доріг."
-            },
-            {
-                id: 6,
-                title: "Протеїн Optimum Nutrition Gold Standard 100% Whey (2.27 кг)",
-                category: "Харчування",
-                price: 2850,
-                oldPrice: 3200,
-                rating: 5.0,
-                reviewsCount: 112,
-                image: "https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?auto=format&fit=crop&w=800&q=80",
-                sizes: ["2.27 кг"],
-                colors: ["Шоколад", "Ваніль"],
-                badge: "ХІТ",
-                description: "Найпопулярніший сироватковий ізолят у світі для відновлення та росту м'язової маси."
-            },
-            {
-                id: 7,
-                title: "Кросівки Asics Gel-Nimbus 25",
-                category: "Біг",
-                price: 5499,
-                oldPrice: 6200,
-                rating: 4.8,
-                reviewsCount: 34,
-                image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80",
-                sizes: ["41", "42", "43", "44"],
-                colors: ["Синій", "Чорний"],
-                badge: "",
-                description: "Найкраща амортизація для тривалих пробіжок по асфальту завдяки піні FF BLAST™ PLUS ECO."
-            },
-            {
-                id: 8,
-                title: "Рюкзак Туристичний Deuter Aircontact Core 50+10",
-                category: "Туризм",
-                price: 8400,
-                oldPrice: 0,
-                rating: 4.9,
-                reviewsCount: 21,
-                image: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80",
-                sizes: ["60L"],
-                colors: ["Синій", "Оливковий"],
-                badge: "NEW",
-                description: "Ергономічний експедиційний рюкзак з інноваційною вентильованою спинкою."
-            },
-            {
-                id: 9,
-                title: "М'яч Футбольний Adidas UCL Pro 2026",
-                category: "Футбол",
-                price: 3200,
-                oldPrice: 3600,
-                rating: 4.9,
-                reviewsCount: 56,
-                image: "https://images.unsplash.com/photo-1614632537190-23e4146777db?auto=format&fit=crop&w=800&q=80",
-                sizes: ["5"],
-                colors: ["Білий/Мультиколор"],
-                badge: "ОФІЦІЙНИЙ",
-                description: "Офіційний ігровий м'яч Ліги Чемпіонів УЄФА з безшовною термоскріпленою поверхнею."
-            },
-            {
-                id: 10,
-                title: "Спортивний Костюм Under Armour Armor Fleece",
-                category: "Одяг",
-                price: 3999,
-                oldPrice: 4800,
-                rating: 4.6,
-                reviewsCount: 19,
-                image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
-                sizes: ["S", "M", "L", "XL"],
-                colors: ["Чорний", "Сірий"],
-                badge: "SALE",
-                description: "Легкий, теплий та дихаючий спортивний костюм для щоденного тренування на вулиці."
-            },
-            {
-                id: 11,
-                title: "Фитнес-браслет Garmin Forerunner 265",
-                category: "Фітнес",
-                price: 16999,
-                oldPrice: 0,
-                rating: 5.0,
-                reviewsCount: 12,
-                image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=800&q=80",
-                sizes: ["Універсальний"],
-                colors: ["Чорний"],
-                badge: "PREMIUM",
-                description: "Смарт-годинник для бігу з яскравим AMOLED дисплеєм та розширеною метрикою готовності до тренувань."
-            },
-            {
-                id: 12,
-                title: "Шолом Велосипедний Giro Agilis MIPS",
-                category: "Велоспорт",
-                price: 3100,
-                oldPrice: 3500,
-                rating: 4.7,
-                reviewsCount: 9,
-                image: "https://images.unsplash.com/photo-1559348349-86f1f65817fe?auto=format&fit=crop&w=800&q=80",
-                sizes: ["M", "L"],
-                colors: ["Матовий Чорний"],
-                badge: "",
-                description: "Шолом із додатковим захистом MIPS для шосейного та гравійного катання."
-            }
-        ];
-
         const CATEGORIES = [
             { name: "Усі", icon: "fa-border-all" },
             { name: "Біг", icon: "fa-person-running" },
@@ -827,7 +675,10 @@
             { name: "Футбол", icon: "fa-futbol" },
             { name: "Туризм", icon: "fa-campground" },
             { name: "Велоспорт", icon: "fa-person-biking" },
-            { name: "Харчування", icon: "fa-jar" }
+            { name: "Харчування", icon: "fa-jar" },
+            { name: "Одяг", icon: "fa-shirt" },
+            { name: "Теніс", icon: "fa-table-tennis-paddle-ball" },
+            { name: "Плавання", icon: "fa-person-swimming" }
         ];
 
         /* ==========================================================================
@@ -838,21 +689,105 @@
             wishlist: JSON.parse(localStorage.getItem('ax_wishlist')) || [],
             activeCategory: "Усі",
             searchQuery: "",
-            maxPrice: 12000,
+            maxPrice: 50000,
             sortBy: "popular",
-            appliedPromo: false
+            appliedPromo: false,
+            preferences: JSON.parse(localStorage.getItem('ax_preferences') || 'null')
         };
 
         /* ==========================================================================
            INITIALIZATION
            ========================================================================== */
         window.addEventListener('DOMContentLoaded', () => {
+            renderProductTypeOptions();
+            document.getElementById('sportPreference').addEventListener('change', () => renderProductTypeOptions());
+            restoreQuestionnaire();
             renderCategoryShowcase();
             renderCategoryPills();
             renderProducts();
             updateCartUI();
             updateWishlistBadge();
         });
+
+        function renderProductTypeOptions(selectedType = '') {
+            const sport = document.getElementById('sportPreference').value;
+            const typeSelect = document.getElementById('productTypePreference');
+            const availableTypes = [...new Map(
+                PRODUCTS.filter(product => !sport || product.category === sport)
+                    .map(product => [product.type, { value: product.type, label: product.typeLabel }])
+            ).values()];
+
+            typeSelect.innerHTML = '<option value="">Будь-який тип товару</option>' +
+                availableTypes.map(type => `<option value="${type.value}">${type.label}</option>`).join('');
+            typeSelect.value = availableTypes.some(type => type.value === selectedType) ? selectedType : '';
+        }
+
+        function restoreQuestionnaire() {
+            if (!state.preferences) return;
+
+            document.getElementById('sportPreference').value = state.preferences.sport;
+            renderProductTypeOptions(state.preferences.type || '');
+            document.getElementById('modelPreference').value = state.preferences.model || '';
+            document.getElementById('colorPreference').value = state.preferences.color || '';
+            document.getElementById('budgetPreference').value = String(state.preferences.maxPrice);
+            document.querySelectorAll('input[name="preferredBrand"]').forEach(input => {
+                input.checked = (state.preferences.brands || []).includes(input.value);
+            });
+            document.getElementById('shopIntro').classList.add('hidden');
+            document.getElementById('categoryShowcase').classList.add('hidden');
+            document.getElementById('editQuestionnaireBtn').classList.remove('hidden');
+            document.getElementById('catalogTitle').textContent = `Товари для спорту: ${state.preferences.sport}`;
+            document.getElementById('catalogSubtitle').textContent = 'Підібрали доступні товари за вашими відповідями';
+        }
+
+        function submitQuestionnaire(event) {
+            event.preventDefault();
+            state.preferences = {
+                sport: document.getElementById('sportPreference').value,
+                type: document.getElementById('productTypePreference').value,
+                model: document.getElementById('modelPreference').value.trim(),
+                color: document.getElementById('colorPreference').value,
+                brands: Array.from(document.querySelectorAll('input[name="preferredBrand"]:checked')).map(input => input.value),
+                maxPrice: Number(document.getElementById('budgetPreference').value)
+            };
+            localStorage.setItem('ax_preferences', JSON.stringify(state.preferences));
+            state.activeCategory = "Усі";
+            state.searchQuery = "";
+            state.maxPrice = 50000;
+            state.sortBy = "popular";
+            document.getElementById('searchInput').value = "";
+            document.getElementById('mobileSearchInput').value = "";
+            document.getElementById('sortSelect').value = "popular";
+            document.getElementById('priceRange').value = 50000;
+            document.getElementById('priceRangeValue').textContent = "50 000 грн";
+            restoreQuestionnaire();
+            renderCategoryPills();
+            renderProducts();
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function editQuestionnaire() {
+            state.preferences = null;
+            localStorage.removeItem('ax_preferences');
+            document.getElementById('shopIntro').classList.remove('hidden');
+            document.getElementById('categoryShowcase').classList.remove('hidden');
+            document.getElementById('editQuestionnaireBtn').classList.add('hidden');
+            document.getElementById('catalogTitle').textContent = 'Найпопулярніші товари';
+            document.getElementById('catalogSubtitle').textContent = 'Перегляньте товари, які найчастіше обирають наші покупці';
+            document.getElementById('sportQuestionnaire').reset();
+            renderProductTypeOptions();
+            state.activeCategory = "Усі";
+            state.searchQuery = "";
+            state.maxPrice = 50000;
+            state.sortBy = "popular";
+            document.getElementById('searchInput').value = "";
+            document.getElementById('mobileSearchInput').value = "";
+            document.getElementById('sortSelect').value = "popular";
+            document.getElementById('priceRange').value = 50000;
+            document.getElementById('priceRangeValue').textContent = "50 000 грн";
+            renderCategoryPills();
+            renderProducts();
+        }
 
         /* ==========================================================================
            RENDERING LOGIC
@@ -891,15 +826,32 @@
                 const matchesCat = (state.activeCategory === "Усі") || 
                                  (state.activeCategory === "SALE" ? p.oldPrice > 0 : p.category === state.activeCategory);
                 const matchesSearch = p.title.toLowerCase().includes(state.searchQuery.toLowerCase()) || 
-                                     p.category.toLowerCase().includes(state.searchQuery.toLowerCase());
-                const matchesPrice = p.price <= state.maxPrice;
-                return matchesCat && matchesSearch && matchesPrice;
+                                     p.category.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+                                     p.brand.toLowerCase().includes(state.searchQuery.toLowerCase());
+                const budget = state.preferences ? Math.min(state.maxPrice, state.preferences.maxPrice) : state.maxPrice;
+                const matchesPrice = p.price <= budget;
+                const matchesSport = !state.preferences || p.category === state.preferences.sport;
+                const matchesType = !state.preferences || !state.preferences.type || p.type === state.preferences.type;
+                const model = state.preferences ? (state.preferences.model || '').toLocaleLowerCase('uk') : '';
+                const matchesModel = !model || p.title.toLocaleLowerCase('uk').includes(model);
+                const color = state.preferences ? state.preferences.color : '';
+                const matchesColor = !color || (color === 'Інший'
+                    ? p.colors.some(productColor => !["Чорний", "Білий", "Синій", "Червоний", "Зелений", "Жовтий", "Помаранчевий", "Сірий"].some(commonColor => productColor.toLocaleLowerCase('uk').includes(commonColor.toLocaleLowerCase('uk'))))
+                    : p.colors.some(productColor => productColor.toLocaleLowerCase('uk').includes(color.toLocaleLowerCase('uk'))));
+                const selectedBrands = state.preferences ? state.preferences.brands || [] : [];
+                const majorBrands = ["Nike", "Adidas", "Puma", "Asics", "Under Armour"];
+                const matchesBrand = selectedBrands.length === 0 ||
+                    selectedBrands.includes(p.brand) ||
+                    (selectedBrands.includes("Інший") && !majorBrands.includes(p.brand));
+                return matchesCat && matchesSearch && matchesPrice && matchesSport && matchesType && matchesModel && matchesColor && matchesBrand;
             });
 
             // Sorting logic
             if (state.sortBy === "price-low") filtered.sort((a, b) => a.price - b.price);
             if (state.sortBy === "price-high") filtered.sort((a, b) => b.price - a.price);
             if (state.sortBy === "rating") filtered.sort((a, b) => b.rating - a.rating);
+            if (state.sortBy === "popular") filtered.sort((a, b) => b.reviewsCount - a.reviewsCount);
+            if (!state.preferences && !state.searchQuery && state.activeCategory === "Усі") filtered = filtered.slice(0, 8);
 
             badge.textContent = filtered.length;
 
@@ -1279,9 +1231,9 @@
             document.getElementById('priceRangeValue').textContent = `${parseInt(val).toLocaleString()} грн`;
         }
         function resetPriceFilter() {
-            state.maxPrice = 12000;
-            document.getElementById('priceRange').value = 12000;
-            document.getElementById('priceRangeValue').textContent = "12 000 грн";
+            state.maxPrice = 50000;
+            document.getElementById('priceRange').value = 50000;
+            document.getElementById('priceRangeValue').textContent = "50 000 грн";
             applyFilters();
         }
 
@@ -1323,9 +1275,10 @@
         function resetAllFilters() {
             state.activeCategory = "Усі";
             state.searchQuery = "";
-            state.maxPrice = 12000;
+            state.maxPrice = 50000;
             state.sortBy = "popular";
             document.getElementById('searchInput').value = "";
+            document.getElementById('mobileSearchInput').value = "";
             renderCategoryPills();
             renderProducts();
         }
